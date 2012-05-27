@@ -30,15 +30,15 @@
 /* Begin PBXFileReference section */
 		A8C70DCF1572163600F9C5F6 /* libCreditCardUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCreditCardUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C70DD21572163600F9C5F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A8C70DD61572163600F9C5F6 /* CreditCardUtil-Prefix.pch */ = {isa = PBXFileReference; path = "CreditCardUtil-Prefix.pch"; sourceTree = "<group>"; };
-		A8C70DD71572163600F9C5F6 /* CreditCardUtil.h */ = {isa = PBXFileReference; path = CreditCardUtil.h; sourceTree = "<group>"; };
+		A8C70DD61572163600F9C5F6 /* CreditCardUtil-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CreditCardUtil-Prefix.pch"; sourceTree = "<group>"; };
+		A8C70DD71572163600F9C5F6 /* CreditCardUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreditCardUtil.h; sourceTree = "<group>"; };
 		A8C70DD81572163600F9C5F6 /* CreditCardUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreditCardUtil.m; sourceTree = "<group>"; };
 		A8C70DDF1572163700F9C5F6 /* CreditCardUtilTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditCardUtilTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C70DE01572163700F9C5F6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A8C70DE21572163700F9C5F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		A8C70DEA1572163700F9C5F6 /* CreditCardUtilTests-Info.plist */ = {isa = PBXFileReference; path = "CreditCardUtilTests-Info.plist"; sourceTree = "<group>"; };
+		A8C70DEA1572163700F9C5F6 /* CreditCardUtilTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CreditCardUtilTests-Info.plist"; sourceTree = "<group>"; };
 		A8C70DEC1572163700F9C5F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A8C70DEE1572163700F9C5F6 /* CreditCardUtilTests.h */ = {isa = PBXFileReference; path = CreditCardUtilTests.h; sourceTree = "<group>"; };
+		A8C70DEE1572163700F9C5F6 /* CreditCardUtilTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreditCardUtilTests.h; sourceTree = "<group>"; };
 		A8C70DEF1572163700F9C5F6 /* CreditCardUtilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreditCardUtilTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
