@@ -15,6 +15,7 @@
 		A8C70DE71572163700F9C5F6 /* libCreditCardUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C70DCF1572163600F9C5F6 /* libCreditCardUtil.a */; };
 		A8C70DED1572163700F9C5F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8C70DEB1572163700F9C5F6 /* InfoPlist.strings */; };
 		A8C70DF01572163700F9C5F6 /* CreditCardUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C70DEF1572163700F9C5F6 /* CreditCardUtilTests.m */; };
+		A8C70E1F15723A1A00F9C5F6 /* CreditCardUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = A8C70DD71572163600F9C5F6 /* CreditCardUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C70E1F15723A1A00F9C5F6 /* CreditCardUtil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +389,7 @@
 				A8C70DF51572163700F9C5F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8C70DF61572163700F9C5F6 /* Build configuration list for PBXNativeTarget "CreditCardUtilTests" */ = {
 			isa = XCConfigurationList;
@@ -395,6 +398,7 @@
 				A8C70DF81572163700F9C5F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
