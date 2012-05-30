@@ -38,6 +38,8 @@ typedef enum {
     Master Card            51 to 55          16
     Visa                   4                 13, 16
  */
-+ (CreditCardType)validCardTypeFromCardNumber:(NSString *)creditCardNumber;
++ (CreditCardType)determineTypeFromCardNumber:(NSString *)creditCardNumber;
++ (Boolean)validateCreditCard:(CreditCardType)creditCardType forCardLength:(int)cardNumberLength;
++ (NSString*)codeForCardType:(CreditCardType)creditCardType;
 
 @end

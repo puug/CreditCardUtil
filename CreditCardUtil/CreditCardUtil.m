@@ -9,16 +9,9 @@
 #import "CreditCardUtil.h"
 
 @interface CreditCardUtil (PrivateMethods)
-+ (CreditCardType)determineTypeFromCardNumber:(NSString *)creditCardNumber;
-+ (CreditCardType)validateCreditCard:(CreditCardType)creditCardType forCardNumber:(NSString*)creditCardNumber;
 @end
 
 @implementation CreditCardUtil
-
-+ (CreditCardType)validCardTypeFromCardNumber:(NSString *)creditCardNumber {
-    CreditCardType unvalidatedType = [self determineTypeFromCardNumber:creditCardNumber];
-    return [self validateCreditCard:unvalidatedType forCardNumber:creditCardNumber];
-}
 
 + (CreditCardType)determineTypeFromCardNumber:(NSString *)creditCardNumber {
     int oneDigitPrefix = [[creditCardNumber substringToIndex:1] intValue];
@@ -51,21 +44,20 @@
     return Unknown;
 }
 
-+ (CreditCardType)validateCreditCard:(CreditCardType)creditCardType forCardNumber:(NSString*)creditCardNumber {
-    CreditCardType result = Unknown;
-    int cardNumberLength =  [creditCardNumber length];
++ (Boolean)validateCreditCard:(CreditCardType)creditCardType forCardLength:(int)cardNumberLength {
+    Boolean result = NO;
     switch (creditCardType) {
         case Amex:
-            result = (cardNumberLength == 15) ? Amex : Unknown;
+            result = (cardNumberLength == 15);
             break;
         case Diners:
-            result = (cardNumberLength == 14) ? Diners : Unknown;
+            result = (cardNumberLength == 14);
             break;
         case MasterCard:
-            result = (cardNumberLength == 16) ? MasterCard : Unknown;
+            result = (cardNumberLength == 16);
             break;
         case Visa:
-            result = (cardNumberLength == 13 || cardNumberLength == 16) ? Visa : Unknown;
+            result = (cardNumberLength == 13 || cardNumberLength == 16);
             break;
         default:
             break;
@@ -73,6 +65,19 @@
     return result;
 }
 
-
++ (NSString*)codeForCardType:(CreditCardType)creditCardType {
+    switch (creditCardType) {
+        case Amex:
+            return @"AMEX";
+        case Diners:
+            return @"DIN";
+        case MasterCard:
+            return @"MC";
+        case Visa:
+            return @"VSA";
+        default:
+            return nil;
+    }
+}
 
 @end
