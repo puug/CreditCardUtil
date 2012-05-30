@@ -86,4 +86,28 @@
     }
 }
 
++ (NSString*)maskCard:(NSString*)cardNumber withSymbol:(NSString*)symbol {
+    NSMutableString *maskedCard = [[NSMutableString alloc] init];
+    for (int i = 0; i < cardNumber.length; i++) {
+        if (i < cardNumber.length - 4) {
+            [maskedCard appendString:symbol];
+        } else {
+            [maskedCard appendString:[NSString stringWithFormat:@"%C", [cardNumber characterAtIndex:i]]];
+        }
+    }
+    return maskedCard;
+}
+
++ (NSString*)formatCard:(NSString*)cardNumber withSymbol:(NSString*)symbol {
+    NSMutableString *formattedCard = [[NSMutableString alloc] init];
+    for (int i = cardNumber.length-1; i >= 0; i--) {
+        if (i > 0 && i < (cardNumber.length-1) && (i + cardNumber.length)%4 == 0) {
+            //Prepend a dash
+            [formattedCard insertString:symbol atIndex:0];
+        }
+        [formattedCard insertString:[NSString stringWithFormat:@"%C", [cardNumber characterAtIndex:i]] atIndex:0];
+    }
+    return formattedCard;
+}
+
 @end

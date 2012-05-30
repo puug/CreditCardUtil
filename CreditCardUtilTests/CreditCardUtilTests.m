@@ -129,4 +129,31 @@
     STAssertEquals(actual, Diners, nil);
 }
 
+- (void)maskCard {
+    NSString* actual = [CreditCardUtil maskCard:@"1234567890" withSymbol:@"x"];
+    STAssertEquals(actual, "xxxxxx7890", nil);
+}
+
+- (void)maskCardMaskSizeSameAsCardLength {
+    NSString* actual = [CreditCardUtil maskCard:@"1234" withSymbol:@"x"];
+    STAssertEquals(actual, "1234", nil);
+}
+
+- (void)formatCard {
+    NSString* actual = [CreditCardUtil formatCard:@"1234567890" withSymbol:@"-"];
+    STAssertEquals(actual, "12-3456-7890", nil);
+}
+
+- (void)formatCard8Length {
+    NSString* actual = [CreditCardUtil formatCard:@"12345678" withSymbol:@"-"];
+    STAssertEquals(actual, "1234-5678", nil);
+}
+
+- (void)formatAndMaskCard8Length {
+    NSString* actual = [CreditCardUtil formatCard:[CreditCardUtil maskCard:@"1234567890" withSymbol:@"x"] 
+                                       withSymbol:@"-"];
+    STAssertEquals(actual, "xx-xxxx-7890", nil);
+}
+
+
 @end

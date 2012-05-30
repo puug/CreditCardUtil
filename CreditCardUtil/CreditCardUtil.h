@@ -41,5 +41,7 @@ typedef enum {
 + (CreditCardType)determineTypeFromCardNumber:(NSString *)creditCardNumber;
 + (Boolean)validateCreditCard:(CreditCardType)creditCardType forCardLength:(int)cardNumberLength;
 + (NSString*)codeForCardType:(CreditCardType)creditCardType;
++ (NSString*)maskCard:(NSString*)cardNumber withSymbol:(NSString*)symbol;
++ (NSString*)formatCard:(NSString*)cardNumber withSymbol:(NSString*)symbol;
 
 @end
