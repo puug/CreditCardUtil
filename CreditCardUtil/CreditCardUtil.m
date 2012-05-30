@@ -14,31 +14,37 @@
 @implementation CreditCardUtil
 
 + (CreditCardType)determineTypeFromCardNumber:(NSString *)creditCardNumber {
-    int oneDigitPrefix = [[creditCardNumber substringToIndex:1] intValue];
-    if (oneDigitPrefix == 4) {
-        return Visa;
-    }
-    
-    int twoDigitPrefix = [[creditCardNumber substringToIndex:2] intValue];
-    switch (twoDigitPrefix) {
-        case 34:
-        case 37:
-            return Amex;
-        case 36:
-            return Diners;
-        case 51:
-        case 52:
-        case 53:
-        case 54:
-        case 55:
-            return MasterCard;
-        default:
-            break;
-    }
-    
-    int threeDigitPrefix = [[creditCardNumber substringToIndex:3] intValue];
-    if (threeDigitPrefix >= 300 && threeDigitPrefix <= 305) {
-        return Diners;
+    if (creditCardNumber && creditCardNumber.length > 0) {
+        int oneDigitPrefix = [[creditCardNumber substringToIndex:1] intValue];
+        if (oneDigitPrefix == 4) {
+            return Visa;
+        }
+        
+        if (creditCardNumber.length > 1) {
+            int twoDigitPrefix = [[creditCardNumber substringToIndex:2] intValue];
+            switch (twoDigitPrefix) {
+                case 34:
+                case 37:
+                    return Amex;
+                case 36:
+                    return Diners;
+                case 51:
+                case 52:
+                case 53:
+                case 54:
+                case 55:
+                    return MasterCard;
+                default:
+                    break;
+            }
+            
+            if (creditCardNumber.length > 2) {
+                int threeDigitPrefix = [[creditCardNumber substringToIndex:3] intValue];
+                if (threeDigitPrefix >= 300 && threeDigitPrefix <= 305) {
+                    return Diners;
+                }
+            }
+        }
     }
     
     return Unknown;

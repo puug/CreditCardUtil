@@ -21,6 +21,18 @@
     [super tearDown];
 }
 
+- (void)testNil
+{
+    CreditCardType actual = [CreditCardUtil determineTypeFromCardNumber:nil];
+    STAssertEquals(actual, Unknown, nil);
+}
+
+- (void)testEmpty
+{
+    CreditCardType actual = [CreditCardUtil determineTypeFromCardNumber:@""];
+    STAssertEquals(actual, Unknown, nil);
+}
+
 - (void)testMastercard51
 {
     CreditCardType actual = [CreditCardUtil determineTypeFromCardNumber:@"5123456789012346"];
@@ -54,6 +66,12 @@
 - (void)testVisa
 {
     CreditCardType actual = [CreditCardUtil determineTypeFromCardNumber:@"4123456789012"];
+    STAssertEquals(actual, Visa, nil);
+}
+
+- (void)testVisaPartialOneChar
+{
+    CreditCardType actual = [CreditCardUtil determineTypeFromCardNumber:@"4"];
     STAssertEquals(actual, Visa, nil);
 }
 
