@@ -129,30 +129,30 @@
     STAssertEquals(actual, Diners, nil);
 }
 
-- (void)maskCard {
+- (void)testMaskCard {
     NSString* actual = [CreditCardUtil maskCard:@"1234567890" withSymbol:@"x"];
-    STAssertEquals(actual, "xxxxxx7890", nil);
+    STAssertTrue([actual isEqualToString:@"xxxxxx7890"], nil);
 }
 
-- (void)maskCardMaskSizeSameAsCardLength {
+- (void)testMaskCardMaskSizeSameAsCardLength {
     NSString* actual = [CreditCardUtil maskCard:@"1234" withSymbol:@"x"];
-    STAssertEquals(actual, "1234", nil);
+    STAssertTrue([actual isEqualToString:@"1234"], nil);
 }
 
-- (void)formatCard {
+- (void)testFormatCard {
     NSString* actual = [CreditCardUtil formatCard:@"1234567890" withSymbol:@"-"];
-    STAssertEquals(actual, "12-3456-7890", nil);
+    STAssertTrue([actual isEqualToString:@"12-3456-7890"], actual);
 }
 
-- (void)formatCard8Length {
+- (void)testFormatCard8Length {
     NSString* actual = [CreditCardUtil formatCard:@"12345678" withSymbol:@"-"];
-    STAssertEquals(actual, "1234-5678", nil);
+    STAssertTrue([actual isEqualToString:@"1234-5678"], nil);
 }
 
-- (void)formatAndMaskCard8Length {
-    NSString* actual = [CreditCardUtil formatCard:[CreditCardUtil maskCard:@"1234567890" withSymbol:@"x"] 
+- (void)testFormatAndMaskCard8Length {
+    NSString* actual = [CreditCardUtil formatCard:[CreditCardUtil maskCard:@"5123456789012346" withSymbol:@"x"] 
                                        withSymbol:@"-"];
-    STAssertEquals(actual, "xx-xxxx-7890", nil);
+    STAssertTrue([actual isEqualToString:@"xxxx-xxxx-xxxx-2346"], nil);
 }
 
 

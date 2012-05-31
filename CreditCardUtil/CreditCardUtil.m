@@ -101,7 +101,7 @@
 + (NSString*)formatCard:(NSString*)cardNumber withSymbol:(NSString*)symbol {
     NSMutableString *formattedCard = [[NSMutableString alloc] init];
     for (int i = cardNumber.length-1; i >= 0; i--) {
-        if (i > 0 && i < (cardNumber.length-1) && (i + cardNumber.length)%4 == 0) {
+        if (i > 0 && i < (cardNumber.length-1) && (i + cardNumber.length + 1)%4 == 0) {
             //Prepend a dash
             [formattedCard insertString:symbol atIndex:0];
         }
