@@ -129,6 +129,36 @@
     STAssertEquals(actual, Diners, nil);
 }
 
+- (void)testMC {
+    CreditCardType actual = [CreditCardUtil cardTypeForCode:@"MC"];
+    STAssertEquals(actual, MasterCard, nil);
+}
+
+- (void)testAMEX {
+    CreditCardType actual = [CreditCardUtil cardTypeForCode:@"AMEX"];
+    STAssertEquals(actual, Amex, nil);
+}
+
+- (void)testDIN {
+    CreditCardType actual = [CreditCardUtil cardTypeForCode:@"DIN"];
+    STAssertEquals(actual, Diners, nil);
+}
+
+- (void)testVSA {
+    CreditCardType actual = [CreditCardUtil cardTypeForCode:@"VSA"];
+    STAssertEquals(actual, Visa, nil);
+}
+
+- (void)testUnkown {
+    CreditCardType actual = [CreditCardUtil cardTypeForCode:@"Unknown"];
+    STAssertEquals(actual, Unknown, nil);
+}
+
+- (void)testRandom {
+    CreditCardType actual = [CreditCardUtil cardTypeForCode:@"aegvehrt"];
+    STAssertEquals(actual, Unknown, nil);
+}
+
 - (void)testMaskCard {
     NSString* actual = [CreditCardUtil maskCard:@"1234567890" withSymbol:@"x"];
     STAssertTrue([actual isEqualToString:@"xxxxxx7890"], nil);

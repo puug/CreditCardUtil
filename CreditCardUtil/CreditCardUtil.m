@@ -86,6 +86,15 @@
     }
 }
 
++ (CreditCardType)cardTypeForCode:(NSString*)code {
+    for (int i = MasterCard; i <= Unknown; i++) {
+        if ([code isEqualToString:[self codeForCardType:i]]) {
+            return i;
+        }
+    }
+    return Unknown;
+}
+
 + (NSString*)maskCard:(NSString*)cardNumber withSymbol:(NSString*)symbol {
     NSMutableString *maskedCard = [[NSMutableString alloc] init];
     for (int i = 0; i < cardNumber.length; i++) {
